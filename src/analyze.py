@@ -11,3 +11,12 @@ def generate_report():
     
     for row in reader:
       sales.append(row)
+
+  report = {
+    "summary": {
+      "total_clients": len(clients),
+      "total_sales": len(sales),
+      "total_revenue": 0
+    }
+  }
+  return report
