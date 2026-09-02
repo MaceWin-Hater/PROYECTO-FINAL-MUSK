@@ -16,3 +16,4 @@ class Sale:
             "amount": self.amount,
             "date": self.date,
         }
+        
