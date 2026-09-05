@@ -78,7 +78,7 @@ def generate_report():
         )
         top_client_by_country[country] = top_client.name
 
-    # Cálculo 7) Total de ventas por categoría (pandas)
+    # Cálculo 7) Total de ventas por categoría
     category_totals = sales_df.groupby("category")["amount"].sum()
     sales_by_category = {k: float(v) for k, v in category_totals.items()}
 
