@@ -82,15 +82,15 @@ def generate_report():
     category_totals = sales_df.groupby("category")["amount"].sum()
     sales_by_category = {k: float(v) for k, v in category_totals.items()}
 
-    # Cálculo 8) Cliente con más ventas en una categoría específica (ejemplo: Electronics)
+    # Cálculo 8) Cliente con más ventas en una categoría específica
     top_electronics_client = client_with_most_sales_in_category(clients, sales, "Electronics")
 
-    # Cálculo 9) Clientes con gasto alto (> 500)
+    # Cálculo 9) Clientes con gasto alto
     high_spending_clients = [
         c["name"] for c in clients_report if c["total_spent"] > HIGH_SPENDING_THRESHOLD
     ]
 
-    # Cálculo 10) Ventas acumuladas mes a mes (pandas)
+    # Cálculo 10) Ventas acumuladas mes a mes
     sales_df["date"] = pd.to_datetime(sales_df["date"])
     sales_df["month"] = sales_df["date"].dt.to_period("M").astype(str)
     monthly_totals = sales_df.groupby("month")["amount"].sum()
